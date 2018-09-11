@@ -4,14 +4,13 @@
 // Developer: Jauregui Crespo
 // Author URL: https://jauregui82.github.io/cv/
 // ======================================================= 
-	$db_host="localhost";
-	$db_name="test_excel_mysql";
-	$db_user="root";
-	$db_pass="";
+
+    require_once('../db/conexion.php');
+
     include '../lib/simplexlsx/simplexlsx.class.php';
-    $xlsx = new SimpleXLSX( '../lib/countries_and_population.xlsx' );
+    $xlsx = new SimpleXLSX( '../lib/data/countries_and_population.xlsx' );
     try {
-       $conn = new PDO( "mysql:host=$db_host;dbname=$db_name", "$db_user", "$db_pass");
+       $conn = new Conexion();
        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch(PDOException $e)
