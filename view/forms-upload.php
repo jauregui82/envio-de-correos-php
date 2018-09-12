@@ -1,3 +1,6 @@
+<?php
+    require_once('../controllers/upload.php');
+?>
 <div class="content-page">
     <!-- Start content -->
     <div class="content">
@@ -24,12 +27,13 @@
                         </div>
                             
                         <div class="card-body">
-                            
-                            <input type="file" name="files[]" id="filer_example2" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" runat="server">
-                            <br>
-                            <br>
-                            &nbsp;
-                            <span onclick="uploadFile" class="btn btn-success">Importar</span>
+                            <form id="form" method="post" action="controllers/upload.php" enctype="multipart/form-data">
+                                <input type="file" name="uploaded_file" id="filer_example2" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" runat="server">
+                                <br>
+                                <br>
+                                &nbsp;
+                                <input class="btn btn-success" type="submit" value="Inportar">
+                            </form>
                         </div>														
                     </div><!-- end card-->					
                 </div>

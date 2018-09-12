@@ -1,5 +1,5 @@
 
-    <div class="content-page">
+	<div class="content-page">
 		<!-- Start content -->
         <div class="content">
 			<div class="container-fluid">
@@ -38,115 +38,50 @@
 										</tr>
 									</thead>										
 									<tbody>
-										<tr>
-											<td>Tiger Nixon</td>
-											<td>System Architect</td>
-											<td>Edinburgh</td>
-											<td>61</td>
-											<td>2011/04/25</td>
-											<td>$320,800</td>
-											<td>$320,800</td>
-										</tr>
-										<tr>
-											<td>Jena Gaines</td>
-											<td>Office Manager</td>
-											<td>London</td>
-											<td>30</td>
-											<td>2008/12/19</td>
-											<td>$90,560</td>
-											<td>$90,560</td>
-										</tr>
-										<tr>
-											<td>Quinn Flynn</td>
-											<td>Support Lead</td>
-											<td>Edinburgh</td>
-											<td>22</td>
-											<td>2013/03/03</td>
-											<td>$342,000</td>
-											<td>$342,000</td>
-										</tr>
-										<tr>
-											<td>Charde Marshall</td>
-											<td>Regional Director</td>
-											<td>San Francisco</td>
-											<td>36</td>
-											<td>2008/10/16</td>
-											<td>$470,600</td>
-											<td>$470,600</td>
-										</tr>
-										<tr>
-											<td>Haley Kennedy</td>
-											<td>Senior Marketing Designer</td>
-											<td>London</td>
-											<td>43</td>
-											<td>2012/12/18</td>
-											<td>$313,500</td>
-											<td>$313,500</td>
-										</tr>
-										<tr>
-											<td>Tatyana Fitzpatrick</td>
-											<td>Regional Director</td>
-											<td>London</td>
-											<td>19</td>
-											<td>2010/03/17</td>
-											<td>$385,750</td>
-											<td>$385,750</td>
-										</tr>
-										<tr>
-											<td>Michael Silva</td>
-											<td>Marketing Designer</td>
-											<td>London</td>
-											<td>66</td>
-											<td>2012/11/27</td>
-											<td>$198,500</td>
-											<td>$198,500</td>
-										</tr>
-										<tr>
-											<td>Paul Byrd</td>
-											<td>Chief Financial Officer (CFO)</td>
-											<td>New York</td>
-											<td>64</td>
-											<td>2010/06/09</td>
-											<td>$725,000</td>
-											<td>$725,000</td>
-										</tr>
-										<tr>
-											<td>Gloria Little</td>
-											<td>Systems Administrator</td>
-											<td>New York</td>
-											<td>59</td>
-											<td>2009/04/10</td>
-											<td>$237,500</td>
-											<td>$237,500</td>
-										</tr>
-										<tr>
-											<td>Bradley Greer</td>
-											<td>Software Engineer</td>
-											<td>London</td>
-											<td>41</td>
-											<td>2012/10/13</td>
-											<td>$132,000</td>
-											<td>$132,000</td>
-										</tr>
-										<tr>
-											<td>Dai Rios</td>
-											<td>Personnel Lead</td>
-											<td>Edinburgh</td>
-											<td>35</td>
-											<td>2012/09/26</td>
-											<td>$217,500</td>
-											<td>$217,500</td>
-										</tr>
-										<tr>
-											<td>Jauregui</td>
-											<td>System Architect</td>
-											<td>Edinburgh</td>
-											<td>61</td>
-											<td>2011/04/25</td>
-											<td>$320,800</td>
-											<td>$320,800</td>
-										</tr>
+									<?php
+										require_once('../db/conexion.php');
+										$db = new Conexion();
+
+										$sql="SELECT * FROM countries_and_population WHERE country!='' ORDER BY rank DESC";
+			   
+										$insert=$db->prepare($sql);
+										$insert->execute();
+										$cuan= $insert->rowCount();
+
+										if ($cuan>0) {
+											while($ver = $insert->fetch()){
+										   $datos=$ver[0]."||". // id
+												  $ver[1]."||". // Country
+												  $ver[2]."||". // population
+												  $ver[3]."||". // date
+												  $ver[4]."||". // powp
+												  $ver[5];      // rank
+									?>
+									<tr>
+										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[1] ?></p></td>
+										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[2] ?></p></td>
+										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[3] ?></p></td>
+										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[4] ?></p></td>
+										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[5] ?></p></td>
+										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[5] ?></p></td>
+										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[5] ?></p></td>
+									</tr>
+									<?php
+									  	 }
+									   }
+									?>
 									</tbody>
+									<thead>
+										<tr>
+											<th>Nombre</th>
+											<th>DNI</th>
+											<th>Telefono</th>
+											<th>Correo</th>
+											<th>Dirección</th>
+											<th>Distrito</th>
+											<th>Region</th>
+										</tr>
+									</thead>
 									<a href="" class="btn btn-success small">Agregar</a>
 									<br>
 									<br>
@@ -154,7 +89,7 @@
 							</div>
 							
 						</div>														
-						<a href="" class="btn btn-danger">Enviar</a>
+						<span id="enviarMail" class="btn btn-danger" data-toggle="modal" data-target="#mdSendMail">Enviar</span>
 						</div><!-- end card-->					
 					</div>
 				</div>

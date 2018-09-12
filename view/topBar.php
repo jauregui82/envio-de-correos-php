@@ -4,7 +4,7 @@
 		<!-- LOGO -->
         <div class="headerbar-left">
 			<!-- <a href="index.html" class="logo"><img alt="Logo" src="assets/images/logo.png" /> <span>Admin</span></a> -->
-			<a href="index.html" class="logo"><span>Mailing Admin</span></a>
+			<a href="index.php" class="logo"><span>Mailing Admin</span></a>
         </div>
 
         <nav class="navbar-custom">

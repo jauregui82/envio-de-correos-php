@@ -12,16 +12,38 @@
     <div id="main">
         <?php require_once "view/topBar.php"; ?>
         <?php require_once "view/nav.php"; ?>
+        <?php include "controllers/upload.php"; ?>
         <div id="content"></div>
     </div>
 	<!-- END content-page -->
-    
+
+<!-- Modal -->
+<div class="modal fade" id="mdSendMail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i> Alto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Esta seguro de que quiere enviar un mensaje de difusion?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" onclick="sendMail()" data-dismiss="modal" class="btn btn-success">Enviar Difusión</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end Modal -->
     <?php require_once "view/footer.php"; ?>
     
 	<script>
         $(document).ready(function(){
-            // $('#content').load('view/forms-upload.html');
-            $('#content').load('view/forms-upload.php');
+            $('#content').load('view/tables-datatable.php');
+            // $('#content').load('view/forms-upload.php');
         });
 	</script>	
 <!-- END Java Script for this page -->
