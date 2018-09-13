@@ -1,4 +1,12 @@
-	<!-- top bar navigation -->
+<div class="preloader">
+    <div class="loading">
+        <h2>
+            ...
+        </h2>
+        <span class="progress"></span>
+    </div>
+</div>
+    <!-- top bar navigation -->
 	<div class="headerbar">
 
 		<!-- LOGO -->
@@ -11,6 +19,11 @@
 
                     <ul class="list-inline float-right mb-0">
 						
+						<li class="list-inline-item ">
+                            <a class="nav-link dropdown-toggle arrow-none salir" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <i class="fa fa-fw fa-power-off"></i> Salir
+                            </a>
+                        </li>
 						<li class="list-inline-item dropdown notif hide">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-question-circle"></i>

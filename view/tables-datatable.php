@@ -82,7 +82,7 @@
 											<th>Region</th>
 										</tr>
 									</thead>
-									<a href="" class="btn btn-success small">Agregar</a>
+									<a href="" class="btn btn-success small hide">Agregar</a>
 									<br>
 									<br>
 								</table>

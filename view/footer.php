@@ -1,9 +1,9 @@
 <footer class="footer">
 		<span class="text-right">
-		Copyright <a target="_blank" href="https://masterhelp.net">MasterHelp</a>
+		<!-- Copyright <a target="_blank" href="https://masterhelp.net">MasterHelp</a> -->
 		</span>
-		<span class="float-right">
-		Powered by <a target="_blank" href="https://www.pikeadmin.com"><b>Jauregui</b></a>
+		<span class="float-right" style="font-size: xx-small;">
+		Powered by <a target="_blank" href="https://jauregui82.github.io/cv/"><b>Jauregui</b></a>
 		</span>
 	</footer>
 
@@ -21,6 +21,8 @@
 <script src="assets/js/lib/fastclick.js"></script>
 <script src="assets/js/lib/jquery.blockUI.js"></script>
 <script src="assets/js/lib/jquery.nicescroll.js"></script>
+<script src="assets/plugins/parsleyjs/parsley.min.js"></script>
+<script src="assets/plugins/alertifyjs/alertify.js"></script>
 
 <!-- App js -->
 <script src="assets/js/pikeadmin.js"></script>

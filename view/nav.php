@@ -17,6 +17,9 @@
 					<li class="submenu">
                         <a id="showData"><i class="fa fa-fw fa-table"></i><span> Listado  </span> </a>
                     </li>
+					<!-- <li class="submenu">
+                        <a class="salir"><i class="fa fa-fw fa-power-off"></i><span> Salir  </span> </a>
+                    </li> -->
 					
 					<!-- <li class="submenu">
                         <a href="#" class=""><i class="fa fa-fw fa-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>

@@ -1,3 +1,8 @@
+$(window).load(function(){
+	$('.preloader').fadeOut('slow');
+	// $('body').loading('stop');
+});
+
 $('#uploadFile').click(function(){
     window.location.hash="";
     window.location.hash="#importar";
@@ -8,10 +13,14 @@ $('#showData').click(function(){
     window.location.hash="#listado";
     $('#content').load('view/tables-datatable.php');
 });
+$('.salir').click(function(){
+    window.location.href="controllers/salir.php"
+});
 
 
 function sendMail(){
-    $('#enviarMail').hide('slow');
+$('#enviarMail').hide('slow');
+$('.preloader').fadeIn('slow');
 window.location.hash="";
 var mail=1;
     cadena="mail=" + mail;
@@ -20,9 +29,12 @@ var mail=1;
 		url:"controllers/enviar.php?action=sendMail",
 		data:cadena,
 		success:function(r){
+            $('.preloader').fadeOut();
             console.log(r);
             console.log(r.correos.length);
-            alert(r.mensaje+" a "+r.correos.length+" correos");
+            $('#mdAlertTitle').html("&nbsp;Difisión enviada");
+            $('#mdAlertContent').html(r.mensaje+" a "+r.correos.length+" correos");
+            $('#mdAlert').modal();
 			if(r==1){
                 // $('#tabla').load('../../controllers/enviar.php');
                 // alertify.success("agregado con exito :)");

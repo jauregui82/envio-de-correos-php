@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,300");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
 
 html {
   position: relative;
@@ -1223,3 +1225,114 @@ td.details-control {
 #showData{
   cursor: pointer;
 }
+.salir{
+  cursor: pointer;
+}
+
+/** ****************************
+            Loading
+**************************** **/
+
+.preloader {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: white;
+  text-align: center;
+  top: 0;
+}
+.loading {
+  overflow: hidden;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	left: 50%;
+	margin-left: -50px;
+	width: 100px;
+	height: 24px;
+}
+
+.progress {
+  display: block;
+	position: absolute;
+	bottom: 0;
+	overflow: hidden;
+	width: 100px;
+	height: 3px;
+	left: -102px;
+	background-color: #ff6c0e!important;
+	-webkit-animation: loader-anim 1s 0s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-animation: loader-anim 1s 0s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  animation: loader-anim 1s 0s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  background-image: -moz-linear-gradient(top, #ff6c0e, #ff6c0e);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff6c0e), to(#ff6c0e));
+  background-image: -webkit-linear-gradient(top, #ff6c0e, #ff6c0e);
+  background-image: -o-linear-gradient(top, #ff6c0e, #ff6c0e);
+  background-image: linear-gradient(to bottom, #ff6c0e, #ff6c0e);
+}
+
+@-webkit-keyframes loader-anim {
+  0% {
+    left: -102px
+  }
+  
+  100% {
+    left: 102px
+  }
+}
+
+@-moz-keyframes loader-anim {
+  0% {
+    left: -102px
+  }
+  
+  100% {
+    left: 102px
+  }
+}
+
+@keyframes loader-anim {
+  0% {
+    left: -102px
+  }
+  
+  100% {
+    left: 102px
+  }
+}
+
+/** ****************************
+        end  Loading
+**************************** **/
+
+/** ****************************
+          fomr
+**************************** **/
+.parsley-error {
+  border-color: #ff5d48 !important;
+}
+.parsley-errors-list.filled {
+  display: block;
+}
+.parsley-errors-list {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+.parsley-errors-list > li {
+  font-size: 12px;
+  list-style: none;
+  color: #ff5d48;
+  margin-top: 5px;
+}
+.form-section {
+  padding-left: 15px;
+  border-left: 2px solid #FF851B;
+  display: none;
+}
+.form-section.current {
+  display: inherit;
+}
+
