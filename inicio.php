@@ -57,7 +57,7 @@ if(isset($_SESSION['user'])){
           <span id="mdAlertContent"></span>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
+          <button id="btnAlertmd" type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
         </div>
       </div>
     </div>
@@ -67,9 +67,20 @@ if(isset($_SESSION['user'])){
       
     <script>
           $(document).ready(function(){
-              // $('#content').load('view/forms-validation.php');
-              $('#content').load('view/tables-datatable.php');
-              // $('#content').load('view/forms-upload.php');
+              // $('#content').load('view/forms-validation');
+              if(window.location.hash=="#error"){
+                $('#content').load('view/forms-upload');
+              }
+              else if(window.location.hash=="#errorAr"){
+                $('#content').load('view/forms-upload');
+              }
+              else if(window.location.hash=="#importar"){
+                $('#content').load('view/forms-upload');
+              }
+              // else if(window.location.hash==""){
+                $('#content').load('view/tables-datatable.php');
+              // }
+              // $('#content').load('view/forms-upload');
           });
     </script>	
   <!-- END Java Script for this page -->

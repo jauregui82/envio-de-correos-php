@@ -1,4 +1,5 @@
-	<!-- Left Sidebar -->
+
+<!-- Left Sidebar -->
 	<div class="left main-sidebar">
 	
 		<div class="sidebar-inner leftscroll">

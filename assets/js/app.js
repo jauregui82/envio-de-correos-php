@@ -53,15 +53,34 @@ var mail=1;
 
 $(document).ready(function () {
     if(window.location.hash=="#importado"){
-        alert("Sus datos fueron cargados con exito");
+        $('#mdAlertTitle').html("&nbsp; Importancion completada");
+        $('#mdAlertContent').html("Sus datos fueron cargados con exito");
+        $('#mdAlert').modal();
+        
     }
     else if(window.location.hash=="#error"){
-        alert("El archivo debe ser en formato de excel")
+        $('#mdAlertTitle').html("&nbsp; Error");
+        $('#mdAlertContent').html("Al parecer hubo un error o archivo debe ser en formato de excel");
+        $('#mdAlert').modal();
+        $('#btnAlertmd').click(function(){
+            $('#content').load('view/forms-upload');
+        });
     }
-    else if(window.location.hash=="#enviado"){
-        alert("Los correos han sido enviados con exito")
+    else if(window.location.hash=="#errorAr"){
+        $('#mdAlertTitle').html("&nbsp; Error");
+        $('#mdAlertContent').html("Al parecer no se cargo un archivo antes de subirlo");
+        $('#mdAlert').modal();
+        $('#content').load('view/forms-upload');
+        $('#btnAlertmd').click(function(){
+            $('#content').load('view/forms-upload');
+        });
     }
     else if(window.location.hash=="#errorEnvio"){
-        alert("No se enviaron los correos")
+        $('#mdAlertTitle').html("&nbsp; Error");
+        $('#mdAlertContent').html("Al parecer hubo un error y No se enviaron los correos");
+        $('#mdAlert').modal();
+        $('#btnAlertmd').click(function(){
+            $('#content').load('view/forms-upload');
+        });
     }
 });

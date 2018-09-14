@@ -28,13 +28,12 @@
 								<table id="example1" class="table table-bordered table-hover display">
 									<thead>
 										<tr>
-											<th>Nombre</th>
-											<th>DNI</th>
-											<th>Telefono</th>
-											<th>Correo</th>
-											<th>Dirección</th>
-											<th>Distrito</th>
-											<th>Region</th>
+											<th>id</th>
+											<th>nombre</th>
+											<th>apellio_p</th>
+											<th>apellido_m</th>
+											<th>email</th>
+											<!-- <th>telefono</th> -->
 										</tr>
 									</thead>										
 									<tbody>
@@ -42,7 +41,7 @@
 										require_once('../db/conexion.php');
 										$db = new Conexion();
 
-										$sql="SELECT * FROM countries_and_population WHERE country!='' ORDER BY rank DESC";
+										$sql="SELECT * FROM auto2show WHERE email!=''";
 			   
 										$insert=$db->prepare($sql);
 										$insert->execute();
@@ -51,20 +50,19 @@
 										if ($cuan>0) {
 											while($ver = $insert->fetch()){
 										   $datos=$ver[0]."||". // id
-												  $ver[1]."||". // Country
-												  $ver[2]."||". // population
-												  $ver[3]."||". // date
-												  $ver[4]."||". // powp
-												  $ver[5];      // rank
+												  $ver[1]."||". // nombre
+												  $ver[2]."||". // apellio_p
+												  $ver[3]."||". // apellido_m
+												  $ver[4]."||". // email
+												  $ver[5];      // telefono
 									?>
 									<tr>
+										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[0] ?></p></td>
 										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[1] ?></p></td>
 										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[2] ?></p></td>
 										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[3] ?></p></td>
 										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[4] ?></p></td>
-										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[5] ?></p></td>
-										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[5] ?></p></td>
-										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[5] ?></p></td>
+										<!-- <td><p id="<?php echo $ver[0] ?>"><?php echo $ver[5] ?></p></td> -->
 									</tr>
 									<?php
 									  	 }
@@ -73,13 +71,12 @@
 									</tbody>
 									<thead>
 										<tr>
-											<th>Nombre</th>
-											<th>DNI</th>
-											<th>Telefono</th>
-											<th>Correo</th>
-											<th>Dirección</th>
-											<th>Distrito</th>
-											<th>Region</th>
+											<th>id</th>
+											<th>nombre</th>
+											<th>apellio_p</th>
+											<th>apellido_m</th>
+											<th>email</th>
+											<!-- <th>telefono</th> -->
 										</tr>
 									</thead>
 									<a href="" class="btn btn-success small hide">Agregar</a>

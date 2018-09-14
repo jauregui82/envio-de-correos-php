@@ -72,7 +72,7 @@
 					data:cadena,
 					success:function(r){
 						if(r==1){
-							window.location="inicio.php";
+							window.location="inicio";
 						}else{
 							// window.location="inicio.php";
 							alertify.alert("Fallo al entrar :(");
