@@ -30,7 +30,7 @@
           catch(PDOException $e){
               echo $sql . "<br>" . $e->getMessage();
           }
-          $stmt = $conn->prepare( "INSERT INTO auto2show (nombre, apellido_p, apellido_m, email, telefono) VALUES (?, ?, ?, ?, ?)");
+          $stmt = $conn->prepare( "INSERT INTO auto2show2 (nombre, apellido_p, apellido_m, email, telefono) VALUES (?, ?, ?, ?, ?)");
             $stmt->bindParam( 1, $nombre);
             $stmt->bindParam( 2, $apellido_p);
             $stmt->bindParam( 3, $apellido_m);

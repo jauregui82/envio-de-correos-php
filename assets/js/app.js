@@ -24,7 +24,7 @@ $('.preloader').fadeIn('slow');
 window.location.hash="";
 var mail=1;
     cadena="mail=" + mail;
-	$.ajax({
+	$.ajax({ 
 		type:"POST",
 		url:"controllers/enviar.php?action=sendMail",
 		data:cadena,

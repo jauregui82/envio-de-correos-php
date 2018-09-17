@@ -17,19 +17,19 @@
     {
         echo $sql . "<br>" . $e->getMessage();
     }
-    $stmt = $conn->prepare( "INSERT INTO countries_and_population (rank, country, population, date_of_estimate, powp) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bindParam( 1, $rank);
-    $stmt->bindParam( 2, $country);
-    $stmt->bindParam( 3, $population);
-    $stmt->bindParam( 4, $date_of_estimate);
-    $stmt->bindParam( 5, $powp);
+    $stmt = $conn->prepare( "INSERT INTO auto2show (nombre, apellido_p, apellido_m, email, telefono) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bindParam( 1, $nombre);
+    $stmt->bindParam( 2, $apellido_p);
+    $stmt->bindParam( 3, $apellido_m);
+    $stmt->bindParam( 4, $email);
+    $stmt->bindParam( 5, $telefono);
     foreach ($xlsx->rows() as $fields)
     {
-        $rank = $fields[0];
-        $country = $fields[1];
-        $population = $fields[2];
-        $date_of_estimate = $fields[3];
-        $powp = $fields[4];
+        $nombre = $fields[0];
+        $apellido_p = $fields[1];
+        $apellido_m = $fields[2];
+        $email = $fields[3];
+        $telefono = $fields[4];
         $exito= $stmt->execute();
     }
     if($exito){ echo 'importacion completa'; }else{ echo 'Hubo un problema. Contacta a un administrador. ';} 

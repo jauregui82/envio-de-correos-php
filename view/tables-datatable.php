@@ -41,7 +41,7 @@
 										require_once('../db/conexion.php');
 										$db = new Conexion();
 
-										$sql="SELECT * FROM auto2show WHERE email!=''";
+										$sql="SELECT * FROM auto2show2 WHERE email!=''";
 			   
 										$insert=$db->prepare($sql);
 										$insert->execute();
