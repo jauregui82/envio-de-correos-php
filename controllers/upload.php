@@ -8,7 +8,7 @@
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($path,PATHINFO_EXTENSION));
     
-     // verifica el formnato cargado
+     // verifica el formnato cargado 
     if($imageFileType != "xlsx" ) {
         // echo json_encode('Discupe, solo se admite en formato de excel &nbsp; ".xlsx"');
         $uploadOk = 0;

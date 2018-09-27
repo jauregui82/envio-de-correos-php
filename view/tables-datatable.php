@@ -29,9 +29,9 @@
 									<thead>
 										<tr>
 											<th>id</th>
-											<th>nombre</th>
+											<!-- <th>nombre</th>
 											<th>apellio_p</th>
-											<th>apellido_m</th>
+											<th>apellido_m</th> -->
 											<th>email</th>
 											<!-- <th>telefono</th> -->
 										</tr>
@@ -41,7 +41,8 @@
 										require_once('../db/conexion.php');
 										$db = new Conexion();
 
-										$sql="SELECT * FROM auto2show2 WHERE email!=''";
+										// $sql="SELECT * FROM consecionarios_mail WHERE email!=''";
+										$sql="SELECT * FROM cineplanet WHERE email!=''";
 			   
 										$insert=$db->prepare($sql);
 										$insert->execute();
@@ -50,18 +51,18 @@
 										if ($cuan>0) {
 											while($ver = $insert->fetch()){
 										   $datos=$ver[0]."||". // id
-												  $ver[1]."||". // nombre
-												  $ver[2]."||". // apellio_p
-												  $ver[3]."||". // apellido_m
-												  $ver[4]."||". // email
-												  $ver[5];      // telefono
+												  $ver[1]; // email
+												//   $ver[2]."||". // apellio_p
+												//   $ver[3]."||". // apellido_m
+												//   $ver[4]."||". // email
+												//   $ver[5];      // telefono
 									?>
 									<tr>
 										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[0] ?></p></td>
 										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[1] ?></p></td>
-										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[2] ?></p></td>
+										<!-- <td><p id="<?php echo $ver[0] ?>"><?php echo $ver[2] ?></p></td>
 										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[3] ?></p></td>
-										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[4] ?></p></td>
+										<td><p id="<?php echo $ver[0] ?>"><?php echo $ver[4] ?></p></td> -->
 										<!-- <td><p id="<?php echo $ver[0] ?>"><?php echo $ver[5] ?></p></td> -->
 									</tr>
 									<?php
@@ -72,9 +73,9 @@
 									<thead>
 										<tr>
 											<th>id</th>
-											<th>nombre</th>
+											<!-- <th>nombre</th>
 											<th>apellio_p</th>
-											<th>apellido_m</th>
+											<th>apellido_m</th> -->
 											<th>email</th>
 											<!-- <th>telefono</th> -->
 										</tr>
